@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -41,7 +41,6 @@
       body {
         font-size: 18px;
         font-family: "Hanken Grotesk", sans-serif;
-        background-color: var(--Pale-blue);
       }
       .contenedor {
         height: 100vh;
@@ -52,24 +51,91 @@
       .card {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        width: 600px;
-        height: 500px;
+        width: 650px;
+        height: 470px;
         border-radius: 12px;
+        box-shadow: 18px 23px 55px -20px rgba(0, 0, 0, 0.4);
+        -webkit-box-shadow: 18px 23px 55px -20px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 18px 23px 55px -20px rgba(0, 0, 0, 0.4);
+        background-color: var(--White);
       }
       .resultado {
         background-color: var(--Light-slate-blue);
-        border-radius: 12px;
+        border-radius: 18px;
       }
-      .summary{
-        padding: 12px;
-        background-color:var(--White);
+      .summary,
+      .resultado {
+        padding: 32px;
+      }
+      .summary {
+        background-color: var(--White);
+        border-radius: 18px;
+      }
+      .title {
+        font-weight: bold;
+        font-size: 1.1em;
+        margin-top: -2px;
       }
       .contenido {
         display: flex;
         flex-direction: column;
+        margin-top: 32px;
       }
       .row {
         display: flex;
+        justify-content: space-between;
+        border-radius: 12px;
+        padding: 0 18px;
+        margin-bottom: 12px;
+      }
+      .row p {
+        margin: 16px 0;
+      }
+      .row-content {
+        display: flex;
+      }
+      .row-content .icon {
+        margin-right: 12px;
+      }
+      .contenido .row:first-child {
+        background-color: hsl(0, 100%, 98%);
+      }
+      .contenido .row:nth-child(2) {
+        background-color: hsl(39, 100%, 98%);
+      }
+      .contenido .row:nth-child(3) {
+        background-color: hsl(166, 100%, 98%);
+      }
+      .contenido .row:last-child {
+        background-color: hsl(234, 85%, 98%);
+      }
+      #red {
+        color: var(--Light-red);
+      }
+      #yellow {
+        color: var(--Orangey-yellow);
+      }
+      #green {
+        color: var(--Green-teal);
+      }
+      #blue {
+        color: var(--Cobalt-blue);
+      }
+      .result {
+        font-weight: bold;
+      }
+      .result span {
+        color: var(--Light-lavender);
+      }
+      button {
+        background-color: var(--Dark-gray-blue);
+        width: 100%;
+        border: none;
+        height: 50px;
+        margin-top: 24px;
+        border-radius: 24px;
+        color: var(--White);
+        font-weight: bold;
       }
     </style>
   </head>
@@ -88,42 +154,50 @@
           <p class="title">Summary</p>
           <div class="contenido">
             <div class="row">
-              <img
-                src="./assets/images/icon-reaction.svg"
-                alt="icon"
-                class="icon"
-              />
-              <p class="p-content">Reaction</p>
+              <div class="row-content">
+                <img
+                  src="./assets/images/icon-reaction.svg"
+                  alt="icon"
+                  class="icon"
+                />
+                <p id="red">Reaction</p>
+              </div>
               <p class="result">80 <span>/ 100 </span></p>
             </div>
             <div class="row">
-              <img
-                src="./assets/images/icon-memory.svg"
-                alt="icon"
-                class="icon"
-              />
-              <p class="p-content">Memory</p>
+              <div class="row-content">
+                <img
+                  src="./assets/images/icon-memory.svg"
+                  alt="icon"
+                  class="icon"
+                />
+                <p id="yellow">Memory</p>
+              </div>
               <p class="result">92 <span>/ 100 </span></p>
             </div>
             <div class="row">
-              <img
-                src="./assets/images/icon-verbal.svg"
-                alt="icon"
-                class="icon"
-              />
-              <p class="p-content">Verbal</p>
+              <div class="row-content">
+                <img
+                  src="./assets/images/icon-verbal.svg"
+                  alt="icon"
+                  class="icon"
+                />
+                <p id="green">Verbal</p>
+              </div>
               <p class="result">
                 61
                 <span> / 100 </span>
               </p>
             </div>
             <div class="row">
-              <img
-                src="./assets/images/icon-visual.svg"
-                alt="icon"
-                class="icon"
-              />
-              <p class="p-content">Visual</p>
+              <div class="row-content">
+                <img
+                  src="./assets/images/icon-visual.svg"
+                  alt="icon"
+                  class="icon"
+                />
+                <p id="blue">Visual</p>
+              </div>
               <p class="result">
                 72
                 <span> / 100 </span>

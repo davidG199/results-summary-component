@@ -41,6 +41,7 @@
       body {
         font-size: 18px;
         font-family: "Hanken Grotesk", sans-serif;
+        margin: 0;
       }
       .contenedor {
         height: 100vh;
@@ -55,14 +56,9 @@
         height: 470px;
         border-radius: 12px;
         box-shadow: 18px 23px 55px -20px rgba(0, 0, 0, 0.4);
-        -webkit-box-shadow: 18px 23px 55px -20px rgba(0, 0, 0, 0.4);
-        -moz-box-shadow: 18px 23px 55px -20px rgba(0, 0, 0, 0.4);
         background-color: var(--White);
       }
-      .resultado {
-        background-color: var(--Light-slate-blue);
-        border-radius: 18px;
-      }
+      /* estilos para la parte del summary */
       .summary,
       .resultado {
         padding: 32px;
@@ -86,7 +82,7 @@
         justify-content: space-between;
         border-radius: 12px;
         padding: 0 18px;
-        margin-bottom: 12px;
+        margin-bottom: 14px;
       }
       .row p {
         margin: 16px 0;
@@ -98,16 +94,16 @@
         margin-right: 12px;
       }
       .contenido .row:first-child {
-        background-color: hsl(0, 100%, 98%);
+        background-color: hsl(0, 100%, 97%);
       }
       .contenido .row:nth-child(2) {
-        background-color: hsl(39, 100%, 98%);
+        background-color: hsl(39, 100%, 97%);
       }
       .contenido .row:nth-child(3) {
-        background-color: hsl(166, 100%, 98%);
+        background-color: hsl(166, 100%, 97%);
       }
       .contenido .row:last-child {
-        background-color: hsl(234, 85%, 98%);
+        background-color: hsl(234, 85%, 97%);
       }
       #red {
         color: var(--Light-red);
@@ -136,6 +132,108 @@
         border-radius: 24px;
         color: var(--White);
         font-weight: bold;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: linear-gradient(
+          180deg,
+          rgba(120, 87, 255, 1) 0%,
+          rgba(46, 43, 233, 1) 100%
+        );
+      }
+      /* estilos para la parte del result */
+      .resultado {
+        background: linear-gradient(
+          180deg,
+          rgba(120, 87, 255, 1) 5%,
+          rgba(46, 43, 233, 1) 85%
+        );
+        border-radius: 18px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: var(--White);
+      }
+      .resultado .title,
+      .resultado-total span {
+        color: var(--Light-lavender);
+      }
+      .p-title {
+        color: var(--White);
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin: 2.5rem 0 0.2rem 0;
+      }
+      .resultado-total {
+        width: 165px;
+        height: 165px;
+        margin-top: 1.1em;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(
+          circle farthest-corner at top center,
+          hsla(256, 72%, 46%, 1) 15%,
+          hsla(241, 72%, 46%, 0) 95%
+        );
+      }
+      .resultado-total p {
+        font-size: 3.5rem;
+        margin: 0;
+        font-weight: bold;
+      }
+      .resultado-total span {
+        font-size: 0.9rem;
+      }
+      .p-info {
+        color: var(--Light-lavender);
+        text-align: center;
+        margin: 24px 0 4px 0;
+      }
+      /* diseño responsive */
+      @media (max-width: 375px) {
+        .card {
+          grid-template-columns: 1fr;
+        }
+        .resultado {
+          width: 100%;
+          border-radius: 0 0 2em 2em;
+          height: 20rem;
+          padding: 12px 18px;
+        }
+        .resultado-total {
+          width: 140px;
+          height: 140px;
+          margin: 0;
+        }
+        .resultado-total p{
+          font-size: 2.8rem;
+        }
+        .p-title{
+          margin-top: 0.5rem;
+        }
+        .p-info{
+          margin-top: 12px;
+        }
+        .title{
+          margin-bottom: 14px;
+        }
+        .contenedor {
+          align-items: start;
+        }
+        .summary {
+          width: 100%;
+          padding: 1.1rem;
+        }
+        .contenido {
+          margin-top: 1.1rem;
+        }
+        button{
+          margin-top: 12px;
+        }
       }
     </style>
   </head>
@@ -144,8 +242,11 @@
       <div class="card">
         <section class="resultado">
           <p class="title">Your Result</p>
-          <div class="resultado-total">76 of 100</div>
-          <p class="title">Great</p>
+          <div class="resultado-total">
+            <p>76</p>
+            <span> of 100 </span>
+          </div>
+          <p class="p-title">Great</p>
           <p class="p-info">
             You scored higher than 65% of the people who have taken these tests.
           </p>
